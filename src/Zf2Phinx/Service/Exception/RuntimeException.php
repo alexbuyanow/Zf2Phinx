@@ -9,5 +9,4 @@ use RuntimeException as PrototypeException;
  */
 class RuntimeException extends PrototypeException
 {
-
 }

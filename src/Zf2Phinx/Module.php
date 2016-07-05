@@ -28,7 +28,7 @@ class Module implements
      */
     public function getConfig()
     {
-        return include __DIR__ . '/../../config/module.config.php';
+        return include __DIR__.'/../../config/module.config.php';
     }
 
     /**
@@ -38,19 +38,19 @@ class Module implements
      */
     public function getAutoloaderConfig()
     {
-        return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
+        return [
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
+                    __NAMESPACE__ => __DIR__.'/src/'.__NAMESPACE__,
+                ],
+            ],
+        ];
     }
 
     /**
      * Returns an array or a string containing usage information for this module's Console commands.
-     * 
-     * @param  AdapterInterface $console
+     *
+     * @param  AdapterInterface  $console
      * @return array|string|null
      */
     public function getConsoleUsage(Console $console)
@@ -85,12 +85,12 @@ class Module implements
 
     /**
      * Returns a string containing a banner text, that describes the module and/or the application.
-     * 
+     *
      * @param  AdapterInterface $console
      * @return string|null
      */
     public function getConsoleBanner(Console $console)
     {
-        return self::MODULE_NAME . ' ' . self::MODULE_VERSION;
+        return self::MODULE_NAME.' '.self::MODULE_VERSION;
     }
 }

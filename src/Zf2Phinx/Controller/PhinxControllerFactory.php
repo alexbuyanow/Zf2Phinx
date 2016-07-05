@@ -29,12 +29,11 @@ class PhinxControllerFactory
     /**
      * Gets ZF Phinx Service
      *
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param  ServiceLocatorInterface $serviceLocator
      * @return Zf2PhinxService
      */
     private function getZf2PhinxService(ServiceLocatorInterface $serviceLocator)
     {
         return $serviceLocator->get(Zf2PhinxService::class);
     }
-
 }

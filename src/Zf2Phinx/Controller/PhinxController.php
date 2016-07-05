@@ -14,7 +14,7 @@ class PhinxController extends AbstractConsoleController
 {
     /**
      * Phinx service
-     * 
+     *
      * @var Zf2PhinxService
      */
     private $phinxService;
@@ -32,8 +32,8 @@ class PhinxController extends AbstractConsoleController
     }
 
     /**
-     * Runs 'Test' command 
-     * 
+     * Runs 'Test' command
+     *
      * @return void
      */
     public function testAction()
@@ -88,7 +88,7 @@ class PhinxController extends AbstractConsoleController
 
     /**
      * Gets Phinx service
-     * 
+     *
      * @return Zf2PhinxService
      */
     private function getPhinxService()
@@ -98,7 +98,7 @@ class PhinxController extends AbstractConsoleController
 
     /**
      * Get console command arguments
-     * 
+     *
      * @return array
      */
     private function getArgvArray()
@@ -111,7 +111,7 @@ class PhinxController extends AbstractConsoleController
 
     /**
      * Writes copyright & version into console
-     * 
+     *
      * @return void
      */
     private function writeModuleInfo()
@@ -120,7 +120,5 @@ class PhinxController extends AbstractConsoleController
         $console->write('Zf2Phinx by Alexey Buyanov. ', ColorInterface::GREEN);
         $console->write('version: ', ColorInterface::WHITE);
         $console->writeLine(Module::MODULE_VERSION, ColorInterface::YELLOW);
-
-
     }
 }
