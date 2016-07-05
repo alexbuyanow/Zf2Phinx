@@ -20,14 +20,14 @@ class Zf2PhinxService
 {
     /**
      * Phinx application
-     * 
+     *
      * @var PhinxApplication
      */
     private $phinxApplication;
 
     /**
      * Phinx application config
-     * 
+     *
      * @var Config
      */
     private $config;
@@ -44,7 +44,7 @@ class Zf2PhinxService
 
     /**
      * Executes 'Test' command
-     * 
+     *
      * @param  array $argv
      * @return void
      */
@@ -99,7 +99,7 @@ class Zf2PhinxService
 
     /**
      * Executes given Phinx command
-     * 
+     *
      * @param  AbstractCommand $command
      * @param  array           $argv
      * @return void
@@ -115,7 +115,7 @@ class Zf2PhinxService
 
     /**
      * Gets Phinx application
-     * 
+     *
      * @return PhinxApplication
      */
     private function getPhinxApplication()

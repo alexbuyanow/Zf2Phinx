@@ -50,8 +50,7 @@ class Zf2PhinxServiceFactory
     {
         $config = $serviceLocator->get('Config');
 
-        if(!(array_key_exists('zf2phinx', $config) && is_array($config['zf2phinx'])))
-        {
+        if (!(array_key_exists('zf2phinx', $config) && is_array($config['zf2phinx']))) {
             throw new Exception\RuntimeException('Zf2Phinx config is not found');
         }
 
@@ -67,19 +66,15 @@ class Zf2PhinxServiceFactory
      */
     private function performConfig(ServiceLocatorInterface $serviceLocator, array $config)
     {
-        if(!(array_key_exists('environments', $config) && is_array($config['environments'])))
-        {
+        if (!(array_key_exists('environments', $config) && is_array($config['environments']))) {
             throw new Exception\RuntimeException('Zf2Phinx environment config is not found');
         }
 
         array_walk(
             $config['environments'],
-            function (&$element, $key) use ($serviceLocator)
-            {
-                if(is_array($element) && array_key_exists('db_adapter', $element))
-                {
-                    if(!$serviceLocator->has($element['db_adapter']))
-                    {
+            function (&$element, $key) use ($serviceLocator) {
+                if (is_array($element) && array_key_exists('db_adapter', $element)) {
+                    if (!$serviceLocator->has($element['db_adapter'])) {
                         $message = sprintf(
                             'Adapter config for environment %s is not found',
                             $key
@@ -89,8 +84,7 @@ class Zf2PhinxServiceFactory
 
                     $adapter = $serviceLocator->get($element['db_adapter']);
 
-                    if(!$adapter instanceof AdapterInterface)
-                    {
+                    if (!$adapter instanceof AdapterInterface) {
                         $message = sprintf(
                             'Adapter config for environment %s must implement %s; %s given',
                             $key,

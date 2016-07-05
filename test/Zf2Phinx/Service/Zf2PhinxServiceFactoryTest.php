@@ -37,7 +37,7 @@ class Zf2PhinxServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue($dbDriverMock));
 
         $serviceLocatorMock = $this->getMockBuilder(ServiceLocatorInterface::class)
-            ->setMethods(['has','get'])
+            ->setMethods(['has', 'get'])
             ->getMock();
 
         $serviceLocatorMock
@@ -47,7 +47,7 @@ class Zf2PhinxServiceFactoryTest extends \PHPUnit_Framework_TestCase
                 $this->returnValueMap(
                     [
                         ['Config', ['zf2phinx' => ['environments' => ['test' => ['db_adapter' => 'AdapterName']]]]],
-                        ['AdapterName', $dbAdapterMock]
+                        ['AdapterName', $dbAdapterMock],
                     ]
                 )
             );

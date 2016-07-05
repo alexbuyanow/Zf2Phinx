@@ -12,17 +12,16 @@ trait ServiceLocatorProviderTrait
 {
     /**
      * Gets service locator
-     * 
+     *
      * @param  ServiceLocatorInterface $serviceLocator
      * @return ServiceLocatorInterface
      */
     protected function getServiceLocator(ServiceLocatorInterface $serviceLocator)
     {
-        if($serviceLocator instanceof ServiceLocatorAwareInterface)
-        {
+        if ($serviceLocator instanceof ServiceLocatorAwareInterface) {
             $serviceLocator = $serviceLocator->getServiceLocator();
         }
-        
+
         return $serviceLocator;
     }
 }

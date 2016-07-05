@@ -10,13 +10,13 @@ use Zf2Phinx\Service\Zf2PhinxServiceFactory;
 return [
     'console' => [
         'router' => [
-            'routes' => require __DIR__ . '/route.config.php',
+            'routes' => require __DIR__.'/route.config.php',
         ],
     ],
 
     'controllers' => [
         'factories' => [
-            PhinxController::class => PhinxControllerFactory::class
+            PhinxController::class => PhinxControllerFactory::class,
         ],
     ],
 

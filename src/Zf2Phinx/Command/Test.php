@@ -12,12 +12,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Test extends TestPrototype
 {
-
     /**
      * Verify configuration file
      *
-     * @param  InputInterface $input
-     * @param  OutputInterface $output
+     * @param  InputInterface            $input
+     * @param  OutputInterface           $output
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @return void
