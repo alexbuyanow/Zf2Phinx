@@ -12,7 +12,7 @@ use Zf2Phinx\Service\Zf2PhinxService;
 class PhinxControllerFactory
 {
     use ServiceLocatorProviderTrait;
-    
+
     /**
      * @param  ServiceLocatorInterface $serviceLocator
      * @return PhinxController
@@ -28,7 +28,7 @@ class PhinxControllerFactory
 
     /**
      * Gets ZF Phinx Service
-     * 
+     *
      * @param ServiceLocatorInterface $serviceLocator
      * @return Zf2PhinxService
      */

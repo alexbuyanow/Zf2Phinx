@@ -2,6 +2,7 @@
     "name": "alexbuyanow/zf2phinx",
     "type": "library",
     "description": "Zend Framework 2 module that provides integration of Phinx library",
+    "homepage": "https://github.com/alexbuyanow/Zf2Phinx",
     "authors": [
         {
             "name": "Alexey Buyanow",

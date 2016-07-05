@@ -13,7 +13,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class Zf2PhinxServiceFactory
 {
     use ServiceLocatorProviderTrait;
-    
+
     /**
      * @param  ServiceLocatorInterface $serviceLocator
      * @return Zf2PhinxService
@@ -21,7 +21,7 @@ class Zf2PhinxServiceFactory
     public function __invoke(ServiceLocatorInterface $serviceLocator)
     {
         $serviceLocator = $this->getServiceLocator($serviceLocator);
-        
+
         $service = new Zf2PhinxService(
             $this->getPhinxApplication(),
             $this->getConfig($serviceLocator)
@@ -32,7 +32,7 @@ class Zf2PhinxServiceFactory
 
     /**
      * Get Phinx application
-     * 
+     *
      * @return PhinxApplication
      */
     private function getPhinxApplication()
@@ -42,7 +42,7 @@ class Zf2PhinxServiceFactory
 
     /**
      * Gets Phinx config
-     * 
+     *
      * @param  ServiceLocatorInterface $serviceLocator
      * @return Config
      */
@@ -60,7 +60,7 @@ class Zf2PhinxServiceFactory
 
     /**
      * Performs config array from ZF to Phinx structure
-     * 
+     *
      * @param  ServiceLocatorInterface $serviceLocator
      * @param  array                   $config
      * @return array
