@@ -5,15 +5,6 @@ namespace Zf2Phinx;
 use Zf2Phinx\Controller\PhinxController;
 
 return [
-    'index' => [
-        'options' => [
-            'route' => 'zf2phinx',
-            'defaults' => [
-                'controller' => PhinxController::class,
-                'action'     => 'test'
-            ],
-        ],
-    ],
     'test' => [
         'options' => [
             'route' => 'zf2phinx test [-v|-vv|-vvv] [-q] [-n] -e ENVIRONMENT',
