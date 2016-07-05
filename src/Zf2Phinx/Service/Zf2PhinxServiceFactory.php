@@ -76,7 +76,7 @@ class Zf2PhinxServiceFactory
                 if (is_array($element) && array_key_exists('db_adapter', $element)) {
                     if (!$serviceLocator->has($element['db_adapter'])) {
                         $message = sprintf(
-                            'Adapter config for environment %s is not found',
+                            'Adapter for environment %s is not found',
                             $key
                         );
                         throw new Exception\RuntimeException($message);
@@ -86,7 +86,7 @@ class Zf2PhinxServiceFactory
 
                     if (!$adapter instanceof AdapterInterface) {
                         $message = sprintf(
-                            'Adapter config for environment %s must implement %s; %s given',
+                            'Adapter for environment %s must implement %s; %s given',
                             $key,
                             AdapterInterface::class,
                             is_object($adapter) ? get_class($adapter) : gettype($adapter)
@@ -99,7 +99,7 @@ class Zf2PhinxServiceFactory
                         ->getConnection();
 
                     $element['connection'] = $connection->getResource();
-                    $element['name'] = $connection->getCurrentSchema();
+                    $element['name']       = $connection->getCurrentSchema();
                 }
 
                 return $element;

@@ -27,10 +27,6 @@ class PhinxController extends AbstractConsoleController
         $this->phinxService = $phinxService;
     }
 
-    public function indexAction()
-    {
-    }
-
     /**
      * Runs 'Test' command
      *
