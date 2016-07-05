@@ -1,0 +1,40 @@
+{
+    "name": "alexbuyanow/zf2phinx",
+    "type": "library",
+    "description": "Zend Framework 2 module that provides integration of Phinx library",
+    "authors": [
+        {
+            "name": "Alexey Buyanow",
+            "email": "alexbuyanow@gmail.com"
+        }
+    ],
+    "keywords": [
+        "zf",
+        "zend framework",
+        "phinx",
+        "database",
+        "migration"
+    ],
+    "require": {
+        "php": ">=5.5",
+        "robmorgan/phinx": "~0.6",
+        "zendframework/zend-db": "~2.3",
+        "zendframework/zend-servicemanager": "~2.3",
+        "zendframework/zend-mvc": "~2.3",
+        "zendframework/zend-modulemanager": "~2.3",
+        "zendframework/zend-console": "~2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zf2Phinx\\": "src/Zf2Phinx/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zf2Phinx\\": "test/Zf2Phinx/"
+        }
+    }
+}
