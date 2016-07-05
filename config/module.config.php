@@ -28,7 +28,7 @@ return [
 
     'zf2phinx' => [
         'paths' => [
-            'migrations' => __DIR__ . '/../../../data/db/migrations/',
+            'migrations' => '',
             'seeds'      => '',
         ],
 
