@@ -187,7 +187,7 @@ class Zf2PhinxServiceFactoryTest extends \PHPUnit_Framework_TestCase
     {
         return $this
             ->getMockBuilder(ServiceLocatorInterface::class)
-            ->setMethods(['has', 'get'])
+            ->setMethods(['has', 'get', 'build'])
             ->getMock();
     }
 }

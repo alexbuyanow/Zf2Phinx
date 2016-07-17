@@ -2,6 +2,7 @@
 
 namespace Zf2Phinx\Controller;
 
+use Zend\Console\Adapter\AdapterInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zf2Phinx\Service\Zf2PhinxService;
 
@@ -14,15 +15,25 @@ class PhinxControllerFactoryTest extends \PHPUnit_Framework_TestCase
             ->setMethods([])
             ->getMock();
 
+        $consoleAdapterMock = $this->getMockBuilder(AdapterInterface::class)
+            ->setMethods([])
+            ->getMock();
+
         $serviceLocatorMock = $this->getMockBuilder(ServiceLocatorInterface::class)
-            ->setMethods(['has', 'get'])
+            ->setMethods(['has', 'get', 'build'])
             ->getMock();
 
         $serviceLocatorMock
-            ->expects($this->once())
+            ->expects($this->exactly(2))
             ->method('get')
-            ->with(Zf2PhinxService::class)
-            ->will($this->returnValue($serviceMock));
+            ->will(
+                $this->returnValueMap(
+                    [
+                        [Zf2PhinxService::class, $serviceMock],
+                        ['Console', $consoleAdapterMock],
+                    ]
+                )
+            );
 
         $factory = new PhinxControllerFactory();
 

@@ -2,8 +2,8 @@
 
 namespace Zf2Phinx\Controller;
 
+use Zend\Console\Adapter\AdapterInterface;
 use Zend\Console\ColorInterface;
-use Zend\Mvc\Controller\AbstractConsoleController;
 use Zf2Phinx\Module;
 use Zf2Phinx\Service\Zf2PhinxService;
 
@@ -20,11 +20,13 @@ class PhinxController extends AbstractConsoleController
     private $phinxService;
 
     /**
-     * @param Zf2PhinxService $phinxService
+     * @param Zf2PhinxService  $phinxService
+     * @param AdapterInterface $console
      */
-    public function __construct(Zf2PhinxService $phinxService)
+    public function __construct(Zf2PhinxService $phinxService, AdapterInterface $console)
     {
         $this->phinxService = $phinxService;
+        $this->console      = $console;
     }
 
     /**
