@@ -20,13 +20,26 @@ class PhinxController extends AbstractConsoleController
     private $phinxService;
 
     /**
+     * Help command message
+     *
+     * @var string
+     */
+    private $helpMessage;
+
+    /**
      * @param Zf2PhinxService  $phinxService
      * @param AdapterInterface $console
+     * @param string           $helpMessage
      */
-    public function __construct(Zf2PhinxService $phinxService, AdapterInterface $console)
+    public function __construct(
+        Zf2PhinxService $phinxService,
+        AdapterInterface $console,
+        $helpMessage
+    )
     {
         $this->phinxService = $phinxService;
         $this->console      = $console;
+        $this->helpMessage  = $helpMessage;
     }
 
     /**
@@ -82,6 +95,12 @@ class PhinxController extends AbstractConsoleController
     {
         $this->writeModuleInfo();
         $this->getPhinxService()->runStatusCommand($this->getArgvArray());
+    }
+
+    public function helpAction()
+    {
+        $this->writeModuleInfo();
+        $this->console->writeLine($this->helpMessage);
     }
 
     /**

@@ -50,4 +50,13 @@ return [
             ],
         ],
     ],
+    'help' => [
+        'options' => [
+            'route'    => 'zf2phinx help',
+            'defaults' => [
+                'controller' => PhinxController::class,
+                'action'     => 'help',
+            ],
+        ],
+    ],
 ];
